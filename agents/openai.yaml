@@ -1,0 +1,7 @@
+interface:
+  display_name: "文件与版本管家"
+  short_description: "检查跨位置重复副本、迭代版本与引用，逐项判断删留并按授权执行和核验"
+  default_prompt: "使用 $artifact-steward 检查指定目录的重复文件、版本和引用，明确哪些能删、哪些应保留及其依据，完成当前授权范围内的整理与核验。"
+
+policy:
+  allow_implicit_invocation: true

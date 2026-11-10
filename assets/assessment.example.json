@@ -1,0 +1,9 @@
+{
+  "root": "/absolute/path/to/cleanup-scope",
+  "reference_roots": ["/absolute/path/to/cleanup-scope"],
+  "protected_roots": ["/absolute/path/to/cleanup-scope/originals"],
+  "items": [
+    {"path": "/absolute/path/to/cleanup-scope/old-copy.pdf", "role": "redundant_copy", "keepers": ["/absolute/path/to/durable-deliverables/report.pdf"]},
+    {"path": "/absolute/path/to/cleanup-scope/archived-copy.pdf", "role": "redundant_copy", "archive": {"path": "/absolute/path/to/durable-deliverables/delivery.zip", "member": "delivery/report.pdf"}}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source": "example_only_not_real_evidence",
+  "threads": [
+    {
+      "thread": {
+        "id": "example-task",
+        "title": "结构演示，使用前替换为真实记录",
+        "cwd": "/replace/with/authorized/absolute/project",
+        "status": "unknown"
+      },
+      "coverage": {
+        "hasMore": true,
+        "complete": false,
+        "notes": [
+          "虚构示例，不能作为交付证据或批准"
+        ]
+      },
+      "messages": [
+        {
+          "kind": "assistant_final",
+          "turn_id": "example-turn",
+          "item_id": "example-message",
+          "at": null,
+          "text": "结构示例：[交付文件](</replace/with/authorized/absolute/project/outputs/项目说明_v2.docx>)"
+        }
+      ]
+    }
+  ]
+}

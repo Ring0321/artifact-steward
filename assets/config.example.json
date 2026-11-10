@@ -1,0 +1,42 @@
+{
+  "classification_root": "分类资料",
+  "protected_roots": [],
+  "classification_rules": [
+    {
+      "prefix": "项目A/用户原件",
+      "extensions": [
+        ".docx",
+        ".pdf"
+      ],
+      "project": "项目A",
+      "category": "原始资料_待复核"
+    },
+    {
+      "prefix": "项目A/已交付",
+      "extensions": [
+        ".docx",
+        ".pdf"
+      ],
+      "project": "项目A",
+      "category": "交付候选_待复核"
+    },
+    {
+      "extensions": [
+        ".pptx"
+      ],
+      "category": "演示材料_待复核"
+    },
+    {
+      "extensions": [
+        ".xlsx",
+        ".csv"
+      ],
+      "category": "数据资料_待复核"
+    }
+  ],
+  "version_groups": [],
+  "notes": [
+    "示例配置，不代表这些目录存在或文件已可移动。",
+    "跨目录/不同用途版本由宿主填写name、purpose、paths和requirement_checks；空数组采用同目录推断，仍需复核。"
+  ]
+}
