@@ -1,13 +1,14 @@
 # Artifact Steward · 文件与版本管家
 
-一个可迁移的 Agent Skill：检查重复文件和迭代版本，判断哪些能删、哪些应留，在授权范围内分类、清理、恢复并核验。
+Artifact Steward 是一个用于**清理指定目录里的垃圾文件**的开源 Agent Skill。它核实废弃的临时文件、不再使用的可重建中间产物、冗余副本和已替代的旧稿，给出逐项删留依据，再按授权永久删除或移入恢复区，并核验处理结果。
 
-A portable Agent Skill for evidence-based duplicate cleanup, version review, file organization and verified recovery. Python 3.11+, standard-library core, no model API or background service required.
+A portable Agent Skill for cleaning junk files in a specified directory. Review discarded temporary files, reproducible intermediates, redundant copies, and superseded drafts before applying a verified cleanup plan. The core uses the Python 3.11+ standard library.
 
 ## 能做什么
 
 | 能力 | 实际行为 |
 | --- | --- |
+| 临时文件和中间产物 | 根据生成来源、任务状态、重建方式和实际引用，判断哪些已经无用 |
 | 跨位置查重 | 完整SHA256比较，区分重复内容和不同路径的独立用途 |
 | 版本判断 | 结合真实交付、最后要求和实物内容，不单凭“最终版”或日期选稿 |
 | 逐项删留 | 给出保留、建议处理或证据不足及其理由、保留件和引用依据 |
@@ -16,7 +17,7 @@ A portable Agent Skill for evidence-based duplicate cleanup, version review, fil
 | 精确执行 | 默认预览；按真实授权、精确路径、身份和完整摘要执行 |
 | 核验与恢复 | 保留件前后校验、逐项日志、同卷恢复区、不覆盖恢复、异常后对账 |
 
-完整内容相同，不代表任意一个位置都能删除：两个项目引用的同一图片要分别保留；微信附件应保留其原入口；WPS缓存不能成为唯一持久备份。
+清理前核实文件的来源、当前用途和保留件。两个项目分别引用的副本各有用途，微信附件需要保留原入口。普通目录里的重复副本应有独立的持久保留件。
 
 ## 安装与使用
 
@@ -29,9 +30,9 @@ A portable Agent Skill for evidence-based duplicate cleanup, version review, fil
 
 客户端接入按官方文档整理；WorkBuddy、DeepSeek桌面内导入和运行尚未实测。技能不会设置模型、账户、密钥或客户端数据库。更多边界见 [宿主接入](references/host-adapters.md)。
 
-调用示例：
+安装后可以直接发起清理任务。
 
-> 使用 artifact-steward 检查我指定的资料目录。把跨位置重复、不同内容旧稿、各用途最后版本分别核实，逐项说明哪些能删、为什么、保留在哪里。应用附件和项目引用保持可用，按我已经明确授权的范围执行并核验。
+> 使用 artifact-steward 清理我指定目录里的垃圾文件。检查已废弃的临时件、可重建中间产物、冗余副本和已替代旧稿。逐项说明删留依据，保护应用附件和项目引用，按我已经明确授权的范围执行并核验。
 
 ## 独立运行脚本
 
